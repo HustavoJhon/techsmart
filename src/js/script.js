@@ -14,7 +14,6 @@ let iconoCarrito = document.querySelector(".icono-carrito");
 let tags = document.querySelectorAll(".tag");
 let productos = document.querySelectorAll(".producto");
 
-/* ✅ Agregar al carrito */
 botones.forEach(boton => {
     boton.addEventListener("click", function() {
         let nombre = this.parentElement.querySelector("h2").textContent;
@@ -47,7 +46,6 @@ function actualizarContador() {
     contador.textContent = carrito.length;
 }
 
-/* ✅ Cambiar vistas */
 function mostrarVistaProductos() {
     vistaProductos.classList.replace("vista-oculta", "vista-activa");
     vistaCarrito.classList.replace("vista-activa", "vista-oculta");
@@ -62,7 +60,6 @@ irInicio.addEventListener("click", mostrarVistaProductos);
 irCarrito.addEventListener("click", mostrarVistaCarrito);
 iconoCarrito.addEventListener("click", mostrarVistaCarrito);
 
-/* ✅ FILTRO DE CATEGORÍAS */
 tags.forEach(tag => {
     tag.addEventListener("click", () => {
         tags.forEach(t => t.classList.remove("activo"));
