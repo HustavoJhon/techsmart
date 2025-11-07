@@ -57,7 +57,7 @@ header {
     padding: 0 6px;
 }
 
-/* ✅ CATEGORÍAS */
+
 .categorias {
     display: flex;
     gap: 10px;
@@ -82,7 +82,7 @@ header {
     color: white;
 }
 
-/* ✅ PRODUCTOS */
+
 .productos {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -129,7 +129,7 @@ button:hover {
     background: #004fcc;
 }
 
-/* ✅ VISTAS */
+
 .vista-activa {
     display: block;
 }
@@ -138,7 +138,6 @@ button:hover {
     display: none;
 }
 
-/* CARRITO */
 .carrito {
     padding: 20px;
 }
@@ -155,7 +154,7 @@ button:hover {
     margin-top: 10px;
 }
 
-/* ✅ GRID RESPONSIVE REAL */
+
 .productos {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -166,7 +165,7 @@ button:hover {
     margin: auto;
 }
 
-/* ✅ TARJETA */
+
 .producto {
     background: #fff;
     padding: 15px;
