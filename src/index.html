@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda TechSmart</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+    <div class="zona-izquierda">
+        <h1>Tienda TechSmart</h1>
+    </div>
+
+    <nav class="zona-derecha">
+        <a href="#" class="ir-inicio">Inicio</a>
+        <a href="#" class="ir-carrito">Carrito</a>
+
+        <div class="icono-carrito" role="button" tabindex="0">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                <path d="M3 3h2l.4 2M7 13h10l4-8H5.4" stroke="currentColor" stroke-width="1.5"/>
+                <circle cx="10" cy="20" r="1" fill="currentColor"/>
+                <circle cx="18" cy="20" r="1" fill="currentColor"/>
+            </svg>
+            <span class="contador">0</span>
+        </div>
+    </nav>
+</header>
+
+<main>
+
+<!-- ✅ BARRA DE CATEGORÍAS -->
+<div class="categorias vista-activa">
+    <button class="tag activo" data-cat="todo">Todo</button>
+    <button class="tag" data-cat="audio">Audio</button>
+    <button class="tag" data-cat="accesorios">Accesorios</button>
+    <button class="tag" data-cat="computo">Cómputo</button>
+    <button class="tag" data-cat="video">Video</button>
+</div>
+
+<!-- ✅ PRODUCTOS -->
+<section class="productos vista-activa">
+
+    <article class="producto" data-cat="audio">
+        <img src="img/auriculares.jpg" alt="Auriculares">
+        <h2>Auriculares</h2>
+        <p class="precio">S/ 120</p>
+        <button class="agregar">Agregar</button>
+    </article>
+
+    <article class="producto" data-cat="accesorios">
+        <img src="img/mouse.jpg" alt="Mouse Gamer">
+        <h2>Mouse Gamer</h2>
+        <p class="precio">S/ 80</p>
+        <button class="agregar">Agregar</button>
+    </article>
+
+    <article class="producto" data-cat="accesorios">
+        <img src="img/teclado.jpg" alt="Teclado Mecánico">
+        <h2>Teclado Mecánico</h2>
+        <p class="precio">S/ 150</p>
+        <button class="agregar">Agregar</button>
+    </article>
+
+    <article class="producto" data-cat="video">
+        <img src="img/monitor.jpg" alt="Monitor 24 pulgadas">
+        <h2>Monitor 24"</h2>
+        <p class="precio">S/ 550</p>
+        <button class="agregar">Agregar</button>
+    </article>
+
+    <article class="producto" data-cat="computo">
+        <img src="img/laptop.jpg" alt="Laptop">
+        <h2>Laptop</h2>
+        <p class="precio">S/ 2500</p>
+        <button class="agregar">Agregar</button>
+    </article>
+
+    <article class="producto" data-cat="video">
+        <img src="img/camara.jpg" alt="Cámara Web">
+        <h2>Cámara Web</h2>
+        <p class="precio">S/ 95</p>
+        <button class="agregar">Agregar</button>
+    </article>
+
+</section>
+
+<!-- ✅ CARRITO -->
+<section class="carrito vista-oculta">
+    <h2>Carrito de compras</h2>
+    <ul class="lista-carrito"></ul>
+    <p class="total">Total: S/ 0</p>
+</section>
+
+</main>
+
+<script src="js/script.js"></script>
+</body>
+</html>

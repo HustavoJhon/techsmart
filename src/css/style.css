@@ -1,0 +1,183 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+}
+
+/* HEADER */
+header {
+    background: #222;
+    color: #fff;
+    padding: 1em 20px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.zona-izquierda h1 {
+    margin: 0;
+    font-size: 1.4rem;
+}
+
+/* NAV DERECHA */
+.zona-derecha {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.zona-derecha a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+/* ICONO CARRITO */
+.icono-carrito {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    color: white;
+}
+
+.contador {
+    background: #ff3b30;
+    color: white;
+    min-width: 22px;
+    height: 22px;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 12px;
+    padding: 0 6px;
+}
+
+/* ✅ CATEGORÍAS */
+.categorias {
+    display: flex;
+    gap: 10px;
+    padding: 15px;
+    justify-content: center;
+}
+
+.tag {
+    background: #e0e0e0;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.tag:hover {
+    background: #ccc;
+}
+
+.tag.activo {
+    background: #0066ff;
+    color: white;
+}
+
+/* ✅ PRODUCTOS */
+.productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.producto {
+    background: #fff;
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+    transition: transform .2s, box-shadow .2s;
+}
+
+.producto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.18);
+}
+
+.producto img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.precio {
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+button {
+    background: #0066ff;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background: #004fcc;
+}
+
+/* ✅ VISTAS */
+.vista-activa {
+    display: block;
+}
+
+.vista-oculta {
+    display: none;
+}
+
+/* CARRITO */
+.carrito {
+    padding: 20px;
+}
+
+.lista-carrito li {
+    background: #fff;
+    margin-bottom: 8px;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+.total {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* ✅ GRID RESPONSIVE REAL */
+.productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    padding: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* ✅ TARJETA */
+.producto {
+    background: #fff;
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+    transition: transform .2s, box-shadow .2s;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
