@@ -1,184 +1,118 @@
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f5f5f5;
+
+:root {
+  --c-50: #f4f6fa;
+  --c-100: #e6e9f3;
+  --c-200: #d3d8ea;
+  --c-300: #b5bfdb;
+  --c-400: #919fc9;
+  --c-500: #7783ba;
+  --c-600: #646dac;
+  --c-700: #595e9c;
+  --c-800: #4c4e81;
+  --c-900: #373958;
+  --c-950: #2b2c40;
 }
 
-header {
-    background: #222;
-    color: #fff;
-    padding: 1em 20px;
-    position: sticky;
+
+.custom-nav {
+    background-color: var(--c-900) !important;
+}
+
+
+.custom-btn {
+    background-color: var(--c-600) !important;
+}
+
+.custom-btn:hover {
+    background-color: var(--c-400) !important;
+    transition: 0.3s;
+}
+
+.hero-section {
+    position: relative;
+    background: url("../img/bgTS.png") no-repeat top center/cover;
+
+    padding: 220px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.hero-section::before {
+    content: "";
+    position: absolute;
     top: 0;
-    z-index: 10;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.zona-izquierda h1 {
-    margin: 0;
-    font-size: 1.4rem;
-}
-
-.zona-derecha {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
-.zona-derecha a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1rem;
-}
-
-.icono-carrito {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    cursor: pointer;
-    color: white;
-    margin: 10px;
-}
-
-.contador {
-    background: #ff3b30;
-    color: white;
-    min-width: 22px;
-    height: 22px;
-    border-radius: 999px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    font-size: 12px;
-    padding: 0 6px;
-}
-
-
-.categorias {
-    display: flex;
-    gap: 10px;
-    padding: 15px;
-    justify-content: center;
-}
-
-.tag {
-    background: #e0e0e0;
-    border: none;
-    padding: 6px 14px;
-    border-radius: 20px;
-    cursor: pointer;
-}
-
-.tag:hover {
-    background: #ccc;
-}
-
-.tag.activo {
-    background: #0066ff;
-    color: white;
-}
-
-
-.productos {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 20px;
-    padding: 20px;
-}
-
-.producto {
-    background: #fff;
-    padding: 15px;
-    border-radius: 12px;
-    text-align: center;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.12);
-    transition: transform .2s, box-shadow .2s;
-}
-
-.producto:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 20px rgba(0,0,0,0.18);
-}
-
-.producto img {
+    left: 0;
     width: 100%;
-    height: 160px;
-    object-fit: cover;
-    border-radius: 10px;
-}
-
-.precio {
-    font-weight: bold;
-    margin: 10px 0;
-}
-
-button {
-    background: #0066ff;
-    color: white;
-    border: none;
-    padding: 8px 12px;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-button:hover {
-    background: #004fcc;
+    height: 100%;
+    background: rgba(55, 57, 88, 0.65); 
+    backdrop-filter: blur(2px);
 }
 
 
-.vista-activa {
-    display: block;
+.hero-section > .container {
+    position: relative;
+    z-index: 2;
 }
 
-.vista-oculta {
-    display: none;
+
+.product-card {
+    transition: transform .3s ease, box-shadow .3s ease;
+    background-color: var(--c-100);
 }
 
-.carrito {
+.product-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,.3);
+}
+
+
+.custom-footer {
+    background-color: var(--c-950);
     padding: 20px;
 }
-
-.lista-carrito li {
-    background: #fff;
-    margin-bottom: 8px;
-    padding: 10px;
-    border-radius: 6px;
+.nav-cart-link {
+    display: inline-flex !important;
+    align-items: center;
+    gap: 6px;  
 }
 
-.total {
+.nav-cart-link i {
+    font-size: 1.3rem;  
+}
+
+.product-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;  
+}
+
+
+.product-title {
+    font-size: 1.3rem !important;
     font-weight: bold;
+    text-shadow: 0 0 4px rgba(0,0,0,0.8);
+}
+
+
+.product-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-content {
+    min-height: 100px; 
+}
+
+
+.precio-tag {
+    color: var(--c-800);
     margin-top: 10px;
 }
 
 
-.productos {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 25px;
-    padding: 20px;
-    width: 100%;
-    max-width: 1200px;
-    margin: auto;
-}
-
-
-.producto {
-    background: #fff;
-    padding: 15px;
-    border-radius: 12px;
-    text-align: center;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.12);
-    transition: transform .2s, box-shadow .2s;
-
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-#logo_tech{
-    width: 150px;
-    height: 100px;
+.card-action {
+    margin-top: auto;
 }

@@ -1,78 +1,98 @@
-let carrito = [];
-let botones = document.querySelectorAll(".agregar");
-let listaCarrito = document.querySelector(".lista-carrito");
-let totalTexto = document.querySelector(".total");
-let contador = document.querySelector(".contador");
 
-let vistaProductos = document.querySelector(".productos");
-let vistaCarrito = document.querySelector(".carrito");
+let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 
-let irInicio = document.querySelector(".ir-inicio");
-let irCarrito = document.querySelector(".ir-carrito");
-let iconoCarrito = document.querySelector(".icono-carrito");
 
-let tags = document.querySelectorAll(".tag");
-let productos = document.querySelectorAll(".producto");
+function obtenerProducto(id) {
+    const productos = {
+        1: { id: 1, nombre: "Laptop Gamer", precio: 4500 },
+        2: { id: 2, nombre: "Teclado Mecánico", precio: 250 },
+        3: { id: 3, nombre: "Mouse RGB", precio: 120 },
+        4: { id: 4, nombre: "Audífonos Bluetooth", precio: 180 },
+        5: { id: 5, nombre: "Tablet Pro 10\"", precio: 980 },
+        6: { id: 6, nombre: "Smartwatch Fit", precio: 260 }
+    };
 
-botones.forEach(boton => {
-    boton.addEventListener("click", function() {
-        let nombre = this.parentElement.querySelector("h2").textContent;
-        let precio = Number(this.parentElement.querySelector(".precio").textContent.replace("S/ ", ""));
-        agregarCarrito(nombre, precio);
-        mostrarCarrito();
-        actualizarContador();
-    });
-});
-
-function agregarCarrito(nombre, precio) {
-    carrito.push({ nombre, precio });
+    return productos[id];
 }
+
+
+function agregarCarrito(id) {
+    let producto = obtenerProducto(id);
+    if (!producto) return;
+
+    let existe = carrito.find(item => item.id === id);
+
+    if (existe) {
+        existe.cantidad++;
+    } else {
+        carrito.push({ ...producto, cantidad: 1 });
+    }
+
+    
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+
+    alert("Producto agregado: " + producto.nombre);
+}
+
+
 
 function mostrarCarrito() {
-    listaCarrito.innerHTML = "";
-    let total = 0;
+    let tabla = document.getElementById("cart-items");
+    let totalTexto = document.getElementById("cart-total");
 
-    carrito.forEach(producto => {
-        let li = document.createElement("li");
-        li.textContent = producto.nombre + " - S/ " + producto.precio;
-        listaCarrito.appendChild(li);
-        total += producto.precio;
+    if (!tabla) return;
+
+    tabla.innerHTML = "";
+    let totalGeneral = 0;
+
+    carrito.forEach((item, index) => {
+        let totalProducto = item.precio * item.cantidad;
+        totalGeneral += totalProducto;
+
+        tabla.innerHTML += `
+            <tr>
+                <td>${item.nombre}</td>
+                <td>S/. ${item.precio}</td>
+                <td>
+                    <input type="number" min="1" value="${item.cantidad}"
+                        onchange="cambiarCantidad(${index}, this.value)"
+                        class="form-control" style="width:80px;">
+                </td>
+                <td>S/. ${totalProducto}</td>
+                <td>
+                    <button class="btn btn-danger btn-sm" onclick="eliminar(${index})">
+                        Eliminar
+                    </button>
+                </td>
+            </tr>`;
     });
 
-    totalTexto.textContent = "Total: S/ " + total;
+    totalTexto.textContent = totalGeneral;
 }
 
-function actualizarContador() {
-    contador.textContent = carrito.length;
+
+function cambiarCantidad(index, valor) {
+    valor = parseInt(valor);
+    if (valor < 1) valor = 1;
+    carrito[index].cantidad = valor;
+
+   
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+
+    mostrarCarrito();
 }
 
-function mostrarVistaProductos() {
-    vistaProductos.classList.replace("vista-oculta", "vista-activa");
-    vistaCarrito.classList.replace("vista-activa", "vista-oculta");
+
+function eliminar(index) {
+    carrito.splice(index, 1);
+
+   
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+
+    mostrarCarrito();
 }
 
-function mostrarVistaCarrito() {
-    vistaCarrito.classList.replace("vista-oculta", "vista-activa");
-    vistaProductos.classList.replace("vista-activa", "vista-oculta");
+
+if (document.getElementById("cart-items")) {
+    mostrarCarrito();
 }
-
-irInicio.addEventListener("click", mostrarVistaProductos);
-irCarrito.addEventListener("click", mostrarVistaCarrito);
-iconoCarrito.addEventListener("click", mostrarVistaCarrito);
-
-tags.forEach(tag => {
-    tag.addEventListener("click", () => {
-        tags.forEach(t => t.classList.remove("activo"));
-        tag.classList.add("activo");
-
-        let categoria = tag.dataset.cat;
-
-        productos.forEach(prod => {
-            if (categoria === "todo" || prod.dataset.cat === categoria) {
-                prod.style.display = "block";
-            } else {
-                prod.style.display = "none";
-            }
-        });
-    });
-});

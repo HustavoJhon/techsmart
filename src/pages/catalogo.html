@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Productos</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg custom-nav">
+    <div class="container">
+        
+        <a class="navbar-brand text-white" href="../index.html">TechSmart</a>
+
+        
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+    
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="catalogo.html">Catálogo</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="carrito.html">Carrito</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<main class="container mt-4">
+    <h3 class="text-center mb-3">Catálogo de Productos</h3>
+
+    <div class="row">
+     
+    <div class="col-12 col-md-6 col-lg-4 mb-4">
+        <div class="card h-100 shadow-sm">
+            <img src="../img/laptop.png" class="card-img-top product-img" alt="Laptop Gamer">
+            <div class="card-body">
+                <h5 class="card-title">Laptop Gamer</h5>
+                <p class="card-text">Rendimiento extremo para videojuegos exigentes.</p>
+                <p class="precio-tag">Precio: <strong>S/. 4500</strong></p>
+            </div>
+            <div class="card-footer bg-white text-center">
+                <button class="btn custom-btn" onclick="agregarCarrito(1)">AGREGAR</button>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="col-12 col-md-6 col-lg-4 mb-4">
+        <div class="card h-100 shadow-sm">
+            <img src="../img/teclado.png" class="card-img-top product-img" alt="Teclado Mecánico">
+            <div class="card-body">
+                <h5 class="card-title">Teclado Mecánico</h5>
+                <p class="card-text">Switches rojos y respuesta silenciosa.</p>
+                <p class="precio-tag">Precio: <strong>S/. 250</strong></p>
+            </div>
+            <div class="card-footer bg-white text-center">
+                <button class="btn custom-btn" onclick="agregarCarrito(2)">AGREGAR</button>
+            </div>
+        </div>
+    </div>
+
+  
+    <div class="col-12 col-md-6 col-lg-4 mb-4">
+        <div class="card h-100 shadow-sm">
+            <img src="../img/mouse.png" class="card-img-top product-img" alt="Mouse RGB">
+            <div class="card-body">
+                <h5 class="card-title">Mouse RGB</h5>
+                <p class="card-text">7 colores RGB y alta precisión.</p>
+                <p class="precio-tag">Precio: <strong>S/. 120</strong></p>
+            </div>
+            <div class="card-footer bg-white text-center">
+                <button class="btn custom-btn" onclick="agregarCarrito(3)">AGREGAR</button>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="col-12 col-md-6 col-lg-4 mb-4">
+        <div class="card h-100 shadow-sm">
+            <img src="../img/audifonos.png" class="card-img-top product-img" alt="Audífonos Bluetooth">
+            <div class="card-body">
+                <h5 class="card-title">Audífonos Bluetooth</h5>
+                <p class="card-text">Sonido envolvente con cancelación de ruido.</p>
+                <p class="precio-tag">Precio: <strong>S/. 180</strong></p>
+            </div>
+            <div class="card-footer bg-white text-center">
+                <button class="btn custom-btn" onclick="agregarCarrito(4)">AGREGAR</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 col-md-6 col-lg-4 mb-4">
+        <div class="card h-100 shadow-sm">
+            <img src="../img/tablet.png" class="card-img-top product-img" alt="Tablet Pro 10">
+            <div class="card-body">
+                <h5 class="card-title">Tablet Pro 10"</h5>
+                <p class="card-text">Pantalla HD perfecta para clases o trabajo.</p>
+                <p class="precio-tag">Precio: <strong>S/. 980</strong></p>
+            </div>
+            <div class="card-footer bg-white text-center">
+                <button class="btn custom-btn" onclick="agregarCarrito(5)">AGREGAR</button>
+            </div>
+        </div>
+    </div>
+
+   
+    <div class="col-12 col-md-6 col-lg-4 mb-4">
+        <div class="card h-100 shadow-sm">
+            <img src="../img/reloj.png" class="card-img-top product-img" alt="Smartwatch Fit">
+            <div class="card-body">
+                <h5 class="card-title">Smartwatch Fit</h5>
+                <p class="card-text">Control de salud, ritmo cardíaco y pasos.</p>
+                <p class="precio-tag">Precio: <strong>S/. 260</strong></p>
+            </div>
+            <div class="card-footer bg-white text-center">
+                <button class="btn custom-btn" onclick="agregarCarrito(6)">AGREGAR</button>
+            </div>
+        </div>
+    </div>
+
+    </div>
+</main>
+
+<script src="../js/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>
